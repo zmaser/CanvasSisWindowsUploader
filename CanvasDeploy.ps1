@@ -5,7 +5,7 @@ $csvFiles = "C:\CanvasScripts\canvas\*.*"
 $zipFile = "C:\CanvasScripts\canvas.zip"
 
 # Replace <canvas site url> with your site ex. college.instructure.com
-$canvasUrl = "<canvas site url"
+$canvasUrl = "<canvas site url>"
 
 # Replace this example access token with one generated from canvas
 $accessToken = "1527~ouRYhqHx2ycjlx73GFS342341tA3UILdNRIDOSegvSYI5tEbqTmZLpRe1IAPZg7B"

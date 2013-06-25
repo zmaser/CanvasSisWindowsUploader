@@ -38,8 +38,8 @@ function Add-Zip
 	
 	foreach($file in $input) 
 	{ 
-            $zipPackage.CopyHere($file.FullName)
-            Start-sleep -milliseconds 2000 # not sure if necessary, but it was in the examples 
+		$zipPackage.CopyHere($file.FullName)
+		Start-sleep -milliseconds 2000 # not sure if necessary, but it was in the examples 
 	}
 }
 
@@ -47,7 +47,7 @@ function Remove-UTF8Bom
 {
 	foreach($file in $input) 
 	{ 
-	    (Get-Content $file) -replace [char]0x00EF + [char]0x00BB + [char]0x00BF  | Set-Content $file
+		(Get-Content $file) -replace [char]0x00EF + [char]0x00BB + [char]0x00BF  | Set-Content $file
 	}
 }
 

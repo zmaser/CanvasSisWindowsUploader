@@ -7,7 +7,7 @@ $zipFile = "C:\CanvasScripts\canvas.zip"
 # Replace <canvas site url> with your site ex. college.instructure.com
 $canvasUrl = "<canvas site url>"
 
-# Replace <Access Token> with one generated from canvas
+# Replace <Access Token> with an access token generated from canvas
 $accessToken = "<Access Token>"
 
 # Optionally replace as needed

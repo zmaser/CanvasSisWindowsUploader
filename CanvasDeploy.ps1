@@ -7,8 +7,8 @@ $zipFile = "C:\CanvasScripts\canvas.zip"
 # Replace <canvas site url> with your site ex. college.instructure.com
 $canvasUrl = "<canvas site url>"
 
-# Replace this example access token with one generated from canvas
-$accessToken = "1527~ouRYhqHx2ycjlx73GFS342341tA3UILdNRIDOSegvSYI5tEbqTmZLpRe1IAPZg7B"
+# Replace <Access Token> with one generated from canvas
+$accessToken = "<Access Token>"
 
 # Optionally replace as needed
 $apiUrl = "https://$canvasUrl/api/v1/accounts/1/sis_imports.json?import_type=instructure_csv&extension=zip"

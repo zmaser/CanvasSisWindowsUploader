@@ -21,7 +21,10 @@ $zipByteArray = [io.file]::ReadAllBytes($zipFile)
 
 $webClient = New-Object System.Net.WebClient
 $webClient.Headers.Add("Authorization","Bearer $accessToken")
-$webClient.UploadData($apiUrl,$zipByteArray)
+$response = $webClient.UploadData($apiUrl,$zipByteArray)
+
+$encoding = New-Object System.Text.ASCIIEncoding
+$encoding.GetString($response)
 
 function Add-Zip
 {

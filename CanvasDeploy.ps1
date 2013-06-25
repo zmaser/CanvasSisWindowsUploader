@@ -5,8 +5,13 @@ $csvFiles = "C:\CanvasScripts\canvas\*.*"
 $zipFile = "C:\CanvasScripts\canvas.zip"
 
 # Replace <canvas site url> with your site ex. college.instructure.com
-$apiUrl = "https://<canvas site url>/api/v1/accounts/1/sis_imports.json?import_type=instructure_csv&extension=zip"
-$authToken = "1527~ouRYhqHx2ycjlx73GFS342341tA3UILdNRIDOSegvSYI5tEbqTmZLpRe1IAPZg7B"
+$canvasUrl = "<canvas site url"
+
+# Replace this example access token with one generated from canvas
+$accessToken = "1527~ouRYhqHx2ycjlx73GFS342341tA3UILdNRIDOSegvSYI5tEbqTmZLpRe1IAPZg7B"
+
+# Optionally replace as needed
+$apiUrl = "https://$canvasUrl/api/v1/accounts/1/sis_imports.json?import_type=instructure_csv&extension=zip"
 
 
 dir $csvFiles | Remove-UTF8Bom
@@ -15,7 +20,7 @@ dir $csvFiles | Add-Zip $zipFile
 $zipByteArray = [io.file]::ReadAllBytes($zipFile)
 
 $webClient = New-Object System.Net.WebClient
-$webClient.Headers.Add("Authorization","Bearer $authToken")
+$webClient.Headers.Add("Authorization","Bearer $accessToken")
 $webClient.UploadData($apiUrl,$zipByteArray)
 
 function Add-Zip

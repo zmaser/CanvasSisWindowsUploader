@@ -13,19 +13,6 @@ $accessToken = "<Access Token>"
 # Optionally replace as needed
 $apiUrl = "https://$canvasUrl/api/v1/accounts/1/sis_imports.json?import_type=instructure_csv&extension=zip"
 
-
-dir $csvFiles | Remove-UTF8Bom
-dir $csvFiles | Add-Zip $zipFile
-
-$zipByteArray = [io.file]::ReadAllBytes($zipFile)
-
-$webClient = New-Object System.Net.WebClient
-$webClient.Headers.Add("Authorization","Bearer $accessToken")
-$response = $webClient.UploadData($apiUrl,$zipByteArray)
-
-$encoding = New-Object System.Text.ASCIIEncoding
-$encoding.GetString($response)
-
 function Add-Zip
 {
   param([string]$zipfilename)
@@ -55,3 +42,14 @@ function Remove-UTF8Bom
 }
 
 
+dir $csvFiles | Remove-UTF8Bom
+dir $csvFiles | Add-Zip $zipFile
+
+$zipByteArray = [io.file]::ReadAllBytes($zipFile)
+
+$webClient = New-Object System.Net.WebClient
+$webClient.Headers.Add("Authorization","Bearer $accessToken")
+$response = $webClient.UploadData($apiUrl,$zipByteArray)
+
+$encoding = New-Object System.Text.ASCIIEncoding
+$encoding.GetString($response)

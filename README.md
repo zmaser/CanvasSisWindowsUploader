@@ -1,4 +1,4 @@
-CanvasSisWindowsUploader
+Canvas Sis Windows Uploader
 ========================
 
 Script to remove the BOM from UTF-8 files, zip the files together, and upload them to the canvas api

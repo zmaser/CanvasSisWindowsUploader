@@ -15,4 +15,5 @@ To use the script, you'll need to set 4 variables:
 5. $apiUrl - (Optional) The url to the api endpoint. Includes the canvas url. By default, this shouldn't need to be changed
 
 
-After changing those fields, the script should be able to be run. It is not currently handling the output.
+After changing those fields, the script should be able to be run. It is not currently handling the output, so you'll
+get a bunch of numbers for the output and will have to login to Canvas to check the status of the import.

@@ -8,7 +8,7 @@ for any glaring style problems.
 
 
 To use the script, you'll need to set 4 variables:
-1. $csvFiles - This is the location of the file(s) to convert, zip, and upload. Currently in a "dir" statement
+1. $csvFiles - This is the location of the file(s) to convert, zip, and upload. 
 2. $zipFile - The location of the zip file
 3. $canvasUrl - The url to the canvas site
 4. $accessToken - The access token generated in the canvas site

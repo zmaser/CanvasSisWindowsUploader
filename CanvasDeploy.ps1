@@ -39,7 +39,7 @@ function Add-Zip
 	foreach($file in $input) 
 	{ 
             $zipPackage.CopyHere($file.FullName)
-            Start-sleep -milliseconds 2000
+            Start-sleep -milliseconds 2000 # not sure if necessary, but it was in the examples 
 	}
 }
 
